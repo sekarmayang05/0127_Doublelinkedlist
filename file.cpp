@@ -46,9 +46,20 @@ public:
             //step 5 : START.prev = newNode (if START exixst)
             if (START != NULL)
                 START -> prev = newNode;
-        
             
+            //step 6 : newNode.prev = NULL
+            newNode->prev = NULL;
+
+            //step 7 : START = newNode
+            START = newNode;
+            return;
         }
+
+        //Insert in between node
+        //Step 8 : Locate position for insertion
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
+
     }
        
     
