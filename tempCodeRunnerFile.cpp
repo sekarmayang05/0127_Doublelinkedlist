@@ -1,13 +1,3 @@
-//Insert in between node
-        //Step 8 : Locate position for insertion
-        Node *current = START;
-        while (current->next != NULL && current->next->noMhs < nim)
-        {
-            current = current->next;
-        }
-
-        if (current ->next != NULL && nim == current->next->noMhs)
-        {
-            cout << "\nDuplikat roll numbers not allowed" << endl;
-            return;
-        }
+// step 9 : Insert between current and current->next
+        newNode->next = current->next;   // step 9a : newNode.next = current.next
+        newNode->prev = current;        // step 9b : newNode.prev = current
