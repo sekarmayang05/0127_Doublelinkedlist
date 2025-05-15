@@ -1,28 +1,31 @@
-void revtraverse()
+ void searchData()
     {
-        if (START == NULL)
+
+ if (START == NULL)
         {
             cout << "\nList is empty "<< endl;
             return;
         }
 
-        // step 1 : Move to last node
-        Node *currentNode = START;
-        int i = 0;
-        while (currentNode != NULL)
-        {
-            currentNode = currentNode->next;
-            i++;
-        }
+        int rollNo;
+        cout << "\nEnter thr roll number to serch: ";
+        cin >> rollNo;
 
-        // step 2 : Traverse backward
-        cout << "\nRecords in discending order of roll number are :\n";
-        while (currentNode != NULL)
-        {
-            cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
+        Node *current = START;
 
-            // step 3 : Move to previous node
-            currentNode = currentNode->prev;
-            i--;
+        //step 1: Traverse to find matching roll number
+        while (current != NULL && current->noMhs != rollNo)
+            current = current->next;
+        
+        // step 2 : Output result
+        if (current == NULL)
+        {
+            cout << "Record not found\n";
         }
-    }
+        else
+        {
+            cout << "Record found\n";
+            cout << "Roll Number: "<< current->noMhs << endl;
+        }
+    }  
+};
