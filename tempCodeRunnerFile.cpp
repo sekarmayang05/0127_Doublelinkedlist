@@ -1,8 +1,13 @@
- // step 3 : Insert at begining if list is empty or nim is smallest
-        if (START == NULL || nim <= START -> noMhs)
+//Insert in between node
+        //Step 8 : Locate position for insertion
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
         {
-            if (START != NULL && nim == START -> noMhs)
-            {
-                cout << "\nDuplicate number not allowed" << endl;
-                return;
-            }
+            current = current->next;
+        }
+
+        if (current ->next != NULL && nim == current->next->noMhs)
+        {
+            cout << "\nDuplikat roll numbers not allowed" << endl;
+            return;
+        }
